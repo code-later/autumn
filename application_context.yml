@@ -1,0 +1,16 @@
+- bean: image
+  bean_class: Image
+  setter_injection:
+  - name: adapter
+    value: bean>fs_adapter
+  - name: generator
+    value: bean>foo_generator
+
+- bean: fs_adapter
+  bean_class: FSAdapter
+
+- bean: foo_generator
+  bean_class: FooGenerator
+  setter_injection:
+    - name: foo_string
+      value: 23
